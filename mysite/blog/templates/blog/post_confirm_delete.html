@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block bodyblock %}
+  <form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ post_deletes.tilte }}</p>
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <a class='btn btn-default' href="{% url 'post_detail' pk=post_deletes.pk %}">Cancel</a>
+  </form>
+{% endblock %}
